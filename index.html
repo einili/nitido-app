@@ -1,14 +1,13 @@
  <!DOCTYPE html>
- <html lang="en">
+ <html lang="es">
  <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Pomodoro</title>
  </head>
  <body>
-        <!--Header de la pagina para titulo y boton de config-->
-    <header>
 
+    <header>
     </header>
 
      <main>
@@ -19,15 +18,19 @@
                  <input type="button" value="Enviar">
              </div>
              <div>
-                 <h4 id="countdown">00:00</h4>
-                 <button id="play">Iniciar</button>
-                 <button id="pause">Pausar</button>
-                 <button id="reiniciar">Reiniciar</button>
+                 <h4 id="countdown">25:00</h4>
+                 <input type="range" id="slider" min="5" max="90" step="5" value="25">
+                 <span id="valor-slider">25</span>
+                 <div>
+                     <button id="play">Iniciar</button>
+                     <button id="pause">Pausar</button>
+                     <button id="reiniciar">Reiniciar</button>
+                 </div>
              </div>
          </section>
      </main>
 
- </body>
 
+ </body>
 <script src="./app.js"></script>
  </html>
