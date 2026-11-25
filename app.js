@@ -1,5 +1,3 @@
-console.log("¡JavaScript está funcionando!");
-
 // 1. Referencias del DOM
 const playBtn = document.getElementById("play");
 const pauseBtn = document.getElementById("pause");
@@ -7,6 +5,10 @@ const reiniciarBtn = document.getElementById("reiniciar");
 const cuentaAtrasEl = document.getElementById("countdown");
 const sliderEl = document.getElementById("slider");
 const valorSliderEl = document.getElementById("valor-slider");
+const tareaInputNombreEl = document.getElementById("task-name");
+const tareaBtnEl = document.getElementById("task-send");
+const tareaActualEl = document.getElementById("current-task");
+const tareaFormEl = document.getElementById("task-form");
 
 
 
@@ -15,6 +17,7 @@ let tiempoRestante = 25;
 let tiempo = tiempoRestante * 60;
 let intervalo = null;
 let estaCorriendo = false;
+let tareaActual = "Sin tarea asignada";
 
 
 // 3. Funciones
@@ -85,8 +88,24 @@ function cambiarTiempo()
   reiniciarTemporizador(); // ahora vuelve a iniciar la funcion con el nuevo valor seleccionado por el slider
 }
 
+function fijarTarea()
+{
+  event.preventDefault();
+  let tareaNombreLimpio = tareaInputNombreEl.value.trim();
+  if (tareaNombreLimpio === "")
+  {
+    return;
+  }
+  tareaActual = tareaNombreLimpio;
+  tareaActualEl.textContent = `Tarea actual: ${tareaActual}`;
+  tareaInputNombreEl.value = "";
+}
+
+
 // 4. Eventos
 playBtn.addEventListener("click", iniciarTemporizador);
 pauseBtn.addEventListener("click", pausarTemporizador);
 reiniciarBtn.addEventListener("click", reiniciarTemporizador);
 sliderEl.addEventListener("input", cambiarTiempo);
+tareaBtnEl.addEventListener("click", fijarTarea);
+tareaFormEl.addEventListener("submit", fijarTarea);
