@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Pomodoro</title>
+    <link rel="stylesheet" href="./style.css">
  </head>
  <body>
 
@@ -11,7 +12,7 @@
     </header>
 
      <main>
-         <section>
+         <section class="section">
             <form id="task-form">
                  <div>
                  <h4>Ingresa la tarea que quieres realizar</h4>
@@ -30,10 +31,12 @@
                      <button id="reiniciar">Reiniciar</button>
                  </div>
              </div>
+             <h3>Historial de sesiones</h3>
+             <ul id="history-list"></ul>
          </section>
      </main>
 
 
  </body>
-<script src="./app.js"></script>
+<script type="module" src="./app.js"></script>
  </html>
